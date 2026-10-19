@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Website Resmi Aji Leksono — Software Engineer, Full-Stack Developer, dan ASN Pemprov Jatim di RS Paru Manguharjo. Portofolio sistem informasi kesehatan digital terintegrasi NutriCare, EFarm, LaboCare, Radiolovegy, RehabCare.">
+  <meta name="keywords" content="Aji Leksono, Programmer Jatim, ASN Pemprov Jatim, RS Paru Manguharjo, NutriCare, EFarm, LaboCare, Radiolovegy, RehabCare, Fullstack Developer Jawa Timur, Sistem Informasi Rumah Sakit">
+  <meta name="author" content="Aji Leksono">
+  <meta property="og:title" content="Aji Leksono — Programmer & ASN Pemprov Jatim | Healthcare Digital Innovator">
+  <meta property="og:description" content="Inovasi teknologi informasi kesehatan berbasis kearifan lokal Jawa modern. Portofolio aplikasi SIMRS RS Paru Manguharjo Provinsi Jawa Timur.">
+  <meta property="og:image" content="assets/images/aji-leksono.jpg">
+  <meta property="og:type" content="website">
+
+  <title>Aji Leksono — Programmer & ASN Pemprov Jatim | Modern Javanese Tech Portfolio</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/images/gunungan-modern.jpg">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ========================================== -->
+  <!-- THREE.JS INTERACTIVE 3D BACKGROUND CANVAS  -->
+  <!-- ========================================== -->
+  <div id="three-canvas-container">
+    <canvas id="three-canvas"></canvas>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- NAVIGATION BAR                             -->
+  <!-- ========================================== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-brand" aria-label="Aji Leksono Beranda">
+        <div class="brand-gunungan">
+          <img src="assets/images/gunungan-modern.jpg" alt="Gunungan Jawa Modern">
+        </div>
+        <div class="brand-text">
+          <h1>Aji Leksono <span class="aksara-jawa" style="font-size:0.95rem; margin-left:4px;">ꦄꦗꦶ</span></h1>
+          <span>ASN Pemprov Jatim • Programmer</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#hero" class="nav-link active">Beranda</a></li>
+          <li><a href="#about" class="nav-link">Tentang & Nilai</a></li>
+          <li><a href="#skills" class="nav-link">Kompetensi</a></li>
+          <li><a href="#portfolio" class="nav-link">Portofolio SIMRS</a></li>
+          <li><a href="#contact-barcode" class="nav-link" onclick="toggleWaFloatingWidget(true)">Kontak Barcode</a></li>
+        </ul>
+      </nav>
+
+      <!-- Navigation Actions -->
+      <div class="nav-actions">
+        <!-- Theme Toggle (Dark / Light) -->
+        <button type="button" class="btn-icon" id="theme-toggle-btn" title="Ganti Tema (Gelap/Terang)" aria-label="Toggle Mode Gelap atau Terang">
+          <!-- Sun Icon (shows in dark mode) -->
+          <svg id="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Moon Icon (shows in light mode) -->
+          <svg id="moon-icon" style="display:none;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Quick WA QR Widget Button -->
+        <button type="button" class="btn-icon" onclick="toggleWaFloatingWidget()" title="Pindai QR WhatsApp" aria-label="Buka Barcode WhatsApp">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+        </button>
+
+        <!-- Mobile Menu Hamburger -->
+        <button type="button" class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Buka Menu Navigasi">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- HERO SECTION                               -->
+  <!-- ========================================== -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Hero Text Column -->
+        <div class="hero-text-content">
+          <!-- Badges -->
+          <div class="hero-badge-group">
+            <div class="badge-pill badge-pill-asn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+              <span>ASN Pemerintah Provinsi Jawa Timur</span>
+            </div>
+            <div class="badge-pill">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <span>RS Paru Manguharjo</span>
+            </div>
+          </div>
+
+          <!-- Title & Greetings -->
+          <div class="hero-title-area">
+            <p class="hero-greeting">
+              <span>Rahayu, Sugeng Rawuh</span>
+              <span class="aksara-jawa">ꦫꦲꦪꦸ</span>
+            </p>
+            <h1 class="hero-name">
+              Aji <span class="text-gold-gradient">Leksono</span>
+            </h1>
+            <div class="hero-typing-wrap">
+              <span id="typing-text">Software Engineer</span>
+              <span class="typing-cursor"></span>
+            </div>
+          </div>
+
+          <!-- Philosophy Callout -->
+          <div class="hero-philosophy">
+            <p>
+              <strong>"Memayu Hayuning Bawana, Migunani Tumraping Liyan"</strong> — Bertekad menghadirkan rekayasa perangkat lunak dan arsitektur sistem informasi kesehatan digital yang tangguh, aman, dan mempermudah akses layanan masyarakat luas.
+            </p>
+          </div>
+
+          <!-- Hero CTAs -->
+          <div class="hero-cta-group">
+            <a href="#portfolio" class="btn btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+              <span>Eksplorasi 5 Sistem SIMRS</span>
+            </a>
+
+            <a href="#contact-barcode" class="btn btn-wa" onclick="toggleWaFloatingWidget(true)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+              <span>Pindai Barcode WhatsApp</span>
+            </a>
+
+            <button type="button" class="btn btn-outline" id="hero-play-music-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+              <span>Putar Lathi 🎵</span>
+            </button>
+          </div>
+
+          <!-- Official Institution Partner Logos -->
+          <div class="hero-partner-logos">
+            <div class="partner-logo-item">
+              <img src="assets/images/logo-jatim.png" alt="Pemerintah Provinsi Jawa Timur">
+              <div>
+                <span>PEMERINTAH PROVINSI</span><br>
+                <strong>JAWA TIMUR</strong>
+              </div>
+            </div>
+            <div class="partner-logo-item">
+              <img src="assets/images/logo-rspm.png" alt="RS Paru Manguharjo Madiun">
+              <div>
+                <span>RS PARU MANGUHARJO</span><br>
+                <strong>PROVINSI JATIM</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Portrait Column -->
+        <div class="hero-portrait-wrapper">
+          <div class="portrait-glow-ring"></div>
+
+          <!-- Floating Badges -->
+          <div class="floating-pill floating-pill-left">
+            <div class="icon-wrap">🏛️</div>
+            <div>
+              <div style="font-size:0.7rem; color:var(--text-muted); line-height:1;">Dedikasi Abdi Negara</div>
+              <strong style="color:var(--gold-primary);">ASN BerAKHLAK</strong>
+            </div>
+          </div>
+
+          <div class="floating-pill floating-pill-right">
+            <div class="icon-wrap">⚡</div>
+            <div>
+              <div style="font-size:0.7rem; color:var(--text-muted); line-height:1;">Arsitektur SIMRS</div>
+              <strong style="color:var(--accent-emerald);">Fullstack Digital Care</strong>
+            </div>
+          </div>
+
+          <!-- Card -->
+          <div class="portrait-card">
+            <div class="portrait-image-box">
+              <img src="assets/images/aji-leksono.jpg" alt="Aji Leksono Programmer ASN Pemprov Jatim">
+              <div class="portrait-frame-corners"></div>
+            </div>
+            <div class="portrait-overlay-info">
+              <div class="portrait-badge-row">
+                <span class="live-status-dot">Siap Berkolaborasi & Melayani</span>
+                <span class="aksara-jawa" style="font-size:0.9rem;">ꦄꦗꦶꦭꦺꦏ꧀ꦱꦤ</span>
+              </div>
+              <h2 class="portrait-role-title">Aji Leksono</h2>
+              <div class="portrait-agency">Software Engineer • RS Paru Manguharjo Jatim</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- STATS & IMPACT SECTION                     -->
+  <!-- ========================================== -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">5+</div>
+          <div class="stat-label">Sistem Digital Terpadu</div>
+          <div class="stat-desc">NutriCare, EFarm, LaboCare, Radiolovegy, RehabCare</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Paperless Transformation</div>
+          <div class="stat-desc">Digitalisasi alur resep, hasil lab, asuhan gizi, & radiologi</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Keandalan Layanan Medis</div>
+          <div class="stat-desc">Infrastruktur data kesehatan online terintegrasi real-time</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-number">JATIM</div>
+          <div class="stat-label">Pemprov Jawa Timur</div>
+          <div class="stat-desc">Dedikasi inovasi pelayanan publik RS Paru Manguharjo</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- ABOUT & PHILOSOPHY SECTION                 -->
+  <!-- ========================================== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          <span>Tentang & Falsafah Kerja</span>
+        </div>
+        <h2 class="section-title">Harmonisasi Tradisi Luhur & Modernitas Digital</h2>
+        <p class="section-subtitle">
+          Memadukan integritas seorang Aparatur Sipil Negara (ASN) Pemerintah Provinsi Jawa Timur dengan ketangkasan rekayasa perangkat lunak modern untuk memajukan kualitas pelayanan kesehatan rakyat.
+        </p>
+        <div class="gunungan-divider">
+          <svg class="gunungan-divider-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L4 14h5v8h6v-8h5L12 2z"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="about-grid">
+        <!-- Text Left -->
+        <div class="about-text-content">
+          <h3>Mengabdi Melalui Baris Kode, Melayani dengan Ketulusan Hati</h3>
+          <p>
+            Sebagai seorang <strong>Programmer dan ASN di Rumah Sakit Paru Manguharjo Provinsi Jawa Timur</strong>, Aji Leksono memegang teguh komitmen bahwa teknologi bukan sekadar alat otomatisasi, melainkan jembatan empati antara tenaga medis, manajemen rumah sakit, dan masyarakat pasien yang membutuhkan pertolongan cepat.
+          </p>
+          <p>
+            Mulai dari manajemen antrean farmasi, pelacakan spesimen darah laboratorium, integrasi arsip radiologi citra medis (PACS), hingga penjadwalan fisioterapi dan kalkulator gizi klinis, seluruh arsitektur dirancang responsif, aman, dan mudah digunakan oleh seluruh lapisan tenaga kesehatan.
+          </p>
+
+          <div class="about-highlights">
+            <div class="highlight-box">
+              <div class="box-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                </svg>
+              </div>
+              <h4>Arsitektur SIMRS Handal</h4>
+              <p>Pengembangan sistem modular berbasis PHP & database relasional yang teruji menangani ribuan transaksi resep dan tes pasien harian.</p>
+            </div>
+
+            <div class="highlight-box">
+              <div class="box-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <h4>Keamanan Data Pasien</h4>
+              <p>Integritas kerahasiaan data rekam medis dengan enkripsi token, otentikasi barcode, dan akses bertingkat sesuai regulasi kesehatan.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Values Right (BerAKHLAK & Javanese Wisdom) -->
+        <div class="values-container">
+          <!-- BerAKHLAK Card -->
+          <div class="value-card">
+            <div class="value-letter-badge">A</div>
+            <div class="value-content">
+              <h4>Nilai ASN BerAKHLAK <span class="value-tag">Fondasi Integritas</span></h4>
+              <p><strong>Berorientasi Pelayanan, Akuntabel, Kompeten, Harmonis, Loyal, Adaptif, dan Kolaboratif.</strong> Menjamin setiap sistem yang didevelop berfokus memberikan kemudahan dan akuntabilitas bagi publik Jawa Timur.</p>
+            </div>
+          </div>
+
+          <!-- Javanese Wisdom 1 -->
+          <div class="value-card">
+            <div class="value-letter-badge">ꦈ</div>
+            <div class="value-content">
+              <h4>Urip Iku Urup <span class="value-tag">Falsafah Hidup</span></h4>
+              <p><em>"Hidup hendaknya memberi nyala terang dan kebermanfaatan bagi sesama."</em> Setiap baris kode yang ditulis diniatkan untuk meringankan beban sesama dan mempercepat pemulihan pasien rumah sakit.</p>
+            </div>
+          </div>
+
+          <!-- Javanese Wisdom 2 -->
+          <div class="value-card">
+            <div class="value-letter-badge">ꦒ</div>
+            <div class="value-content">
+              <h4>Golong Gilig (Kolaborasi Total) <span class="value-tag">Sinergi Lintas Profesi</span></h4>
+              <p>Membangun komunikasi harmonis antara divisi teknologi dengan para dokter spesialis, apoteker, analis laboratorium, nutrisionis, dan fisioterapis demi mewujudkan pelayanan prima.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- SKILLS & COMPETENCIES SECTION              -->
+  <!-- ========================================== -->
+  <section class="section" id="skills" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
+          <span>Kompetensi & Teknologi</span>
+        </div>
+        <h2 class="section-title">Teknologi Modern & Domain Sistem Kesehatan</h2>
+        <p class="section-subtitle">
+          Kombinasi kemahiran teknis Full-Stack Web Development, penguasaan regulasi sistem rumah sakit (SIMRS), dan integrasi otomatisasi mutakhir.
+        </p>
+        <div class="gunungan-divider">
+          <svg class="gunungan-divider-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L4 14h5v8h6v-8h5L12 2z"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Category 1: Backend & Database -->
+        <div class="skill-category-card">
+          <div class="category-icon-wrap">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+              <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+            </svg>
+          </div>
+          <h3>Backend & Database</h3>
+          <p class="cat-desc">Membangun arsitektur server-side yang tangguh, cepat, dan terukur untuk data transaksi medis berkapasitas tinggi.</p>
+          <div class="skill-tag-list">
+            <span class="skill-tag">PHP 8+ (OOP / MVC)</span>
+            <span class="skill-tag">Laravel / Native Architecture</span>
+            <span class="skill-tag">MySQL & MariaDB</span>
+            <span class="skill-tag">Query Optimization</span>
+            <span class="skill-tag">RESTful API Design</span>
+            <span class="skill-tag">FPDF & Automated Reporting</span>
+            <span class="skill-tag">JSON / Webhooks Gateway</span>
+          </div>
+        </div>
+
+        <!-- Category 2: Frontend & Modern Web -->
+        <div class="skill-category-card">
+          <div class="category-icon-wrap">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <h3>Frontend & UI/UX</h3>
+          <p class="cat-desc">Merancang antarmuka ramah pengguna (user-friendly) bagi tenaga medis dengan interaksi real-time dan estetika modern.</p>
+          <div class="skill-tag-list">
+            <span class="skill-tag">Modern JavaScript (ES6+)</span>
+            <span class="skill-tag">Three.js 3D Interactive</span>
+            <span class="skill-tag">Tailwind CSS / Vanilla CSS</span>
+            <span class="skill-tag">Glassmorphism & Micro-animations</span>
+            <span class="skill-tag">Chart.js Analytics Visualizer</span>
+            <span class="skill-tag">QR Code Engine</span>
+            <span class="skill-tag">Mobile Responsive UI</span>
+          </div>
+        </div>
+
+        <!-- Category 3: Healthcare IT & Innovation -->
+        <div class="skill-category-card">
+          <div class="category-icon-wrap">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+            </svg>
+          </div>
+          <h3>Sistem Informasi Kesehatan</h3>
+          <p class="cat-desc">Spesialisasi mendalam dalam alur kerja rumah sakit, interoperabilitas rekam medis, dan transformasi paperless.</p>
+          <div class="skill-tag-list">
+            <span class="skill-tag">SIMRS (Sistem Informasi RS)</span>
+            <span class="skill-tag">LIS (Lab Information System)</span>
+            <span class="skill-tag">PACS / Digital Radiology Viewer</span>
+            <span class="skill-tag">E-Prescription (Farmasi)</span>
+            <span class="skill-tag">Nutritional Care Process (PAGT)</span>
+            <span class="skill-tag">WhatsApp API Integration</span>
+            <span class="skill-tag">Digital Audit Trail & Barcode</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- PORTFOLIO SECTION (5 WEBSITES)             -->
+  <!-- ========================================== -->
+  <section class="section portfolio-section" id="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+          </svg>
+          <span>Portofolio Unggulan</span>
+        </div>
+        <h2 class="section-title">5 Sistem Informasi Kesehatan Digital</h2>
+        <p class="section-subtitle">
+          Karya sistem aplikasi digitalisasi rumah sakit yang dikembangkan oleh Aji Leksono untuk RS Paru Manguharjo Pemerintah Provinsi Jawa Timur.
+        </p>
+        <div class="gunungan-divider">
+          <svg class="gunungan-divider-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L4 14h5v8h6v-8h5L12 2z"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="portfolio-filter-tabs">
+        <button type="button" class="filter-tab active" data-filter="all">Semua Sistem (5)</button>
+        <button type="button" class="filter-tab" data-filter="clinical">Layanan Klinis</button>
+        <button type="button" class="filter-tab" data-filter="diagnostic">Diagnostik & Lab</button>
+        <button type="button" class="filter-tab" data-filter="pharmacy">Farmasi & Terapi</button>
+      </div>
+
+      <!-- Portfolio Grid -->
+      <div class="portfolio-grid">
+
+        <!-- 1. NUTRICARE -->
+        <article class="portfolio-card" data-category="clinical" id="card-nutricare">
+          <div class="card-media">
+            <img src="assets/images/nutricare-preview.jpg" alt="NutriCare RS Paru Manguharjo">
+            <div class="card-media-overlay">
+              <span class="card-badge">Asuhan Gizi Digital</span>
+              <span class="card-live-indicator">Online & Terintegrasi</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="card-header-area">
+              <div class="card-domain">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+                <span>nutricare.rsparumanguharjo.com</span>
+              </div>
+              <h3 class="card-title">NutriCare</h3>
+            </div>
+            <p class="card-description">
+              Sistem manajemen asuhan gizi dan dietetik klinis terpadu RS Paru Manguharjo. Memfasilitasi pendaftaran konsultasi nutrisi online, tracking diet pasien paru, rekam asuhan terstandar, dan kelas edukasi nutrisi.
+            </p>
+            <div class="card-features-list">
+              <div class="feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Booking Jadwal Konsultasi Nutrisionis</span>
+              </div>
+              <div class="feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Kalkulator Kebutuhan Kalori & BMI Klinis</span>
+              </div>
+              <div class="feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Modul Kelas Nutrisi & Edukasi Diet Paru</span>
+              </div>
+            </div>
+            <div class="card-tech-stack">
+              <span class="tech-pill">PHP Fullstack</span>
+              <span class="tech-pill">MySQL</span>
+              <span class="tech-pill">Tailwind CSS</span>
+              <span class="tech-pill">REST API</span>
+            </div>
+            <div class="card-actions">
+              <button type="button" class="btn btn-outline btn-sm" onclick="openProjectModal('nutricare')">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span>Detail Fitur</span>
+              </button>
+              <a href="https://nutricare.rsparumanguharjo.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                <span>Kunjungi Live</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. EFARM -->
+        <article class="portfolio-card" data-category="pharmacy" id="card-efarm">
+          <div class="card-media">
+            <img src="assets/images/efarm-preview.jpg" alt="EFarm RS Paru Manguharjo">
+            <div class="card-media-overlay">
+              <span class="card-badge">E-Farmasi & Resep</span>
+              <span class="card-live-indicator">Online & Terintegrasi</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="card-header-area">
+              <div class="card-domain">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+                <span>efarm.rsparumanguharjo.com</span>
+              </div>
+              <h3 class="card-title">EFarm</h3>
+            </div>
+            <p class="card-description">
+              Sistem Informasi Manajemen Farmasi dan Resep Elektronik terpadu. Mempercepat telaah resep dokter, validasi dosis, pemantauan stok perbekalan farmasi, serta display antrean obat secara paperless.
+            </p>
+            <div class="card-features-list">
+              <div class="feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>E-Prescription & Telaah Obat Klinis</span>
+              </div>
+              <div class="feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Monitoring Stok Obat & BMHP Real-time</span>
+              </div>
+              <div class="feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Display Antrean Dispensing Farmasi</span>
+              </div>
+            </div>
+            <div class="card-tech-stack">
+              <span class="tech-pill">PHP Enterprise</span>
+              <span class="tech-pill">MySQL</span>
+              <span class="tech-pill">Realtime Ajax</span>
+              <span class="tech-pill">FPDF Generator</span>
+            </div>
+            <div class="card-actions">
+              <button type="button" class="btn btn-outline btn-sm" onclick="openProjectModal('efarm')">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span>Detail Fitur</span>
+              </button>
+              <a href="https://efarm.rsparumanguharjo.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                <span>Kunjungi Live</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. LABOCARE -->
+        <article class="portfolio-card" data-category="diagnostic" id="card-labocare">
+          <div class="card-media">
+            <img src="assets/images/labocare-preview.jpg" alt="LaboCare RS Paru Manguharjo">
+            <div class="card-media-overlay">
+              <span class="card-badge">Laboratorium Medis & LIS</span>
+              <span class="card-live-indicator">Online & Terintegrasi</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="card-header-area">
+              <div class="card-domain">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+                <span>labocare.rsparumanguharjo.com</span>
+              </div>
+              <h3 class="card-title">LaboCare</h3>
+            </div>
+            <p class="card-description">
+              Sistem Informasi Laboratorium Medis mutakhir untuk penanganan spesimen patologi klinik. Memungkinkan pasien mengecek dan mengunduh lembar hasil tes laboratorium secara online via verifikasi barcode instan.
+            </p>
+            <div class="card-features-list">
+              <div class="feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Pencatatan & Tracking Spesimen Barcode</span>
+              </div>
+              <div class="feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Validasi Hasil oleh Analis & Dokter Sp.PK</span>
+              </div>
+              <div class="feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Portal Pasien: Cek Hasil Lab Online Aman</span>
+              </div>
+            </div>
+            <div class="card-tech-stack">
+              <span class="tech-pill">PHP Fullstack</span>
+              <span class="tech-pill">MySQL</span>
+              <span class="tech-pill">Chart.js</span>
+              <span class="tech-pill">QR Security</span>
+            </div>
+            <div class="card-actions">
+              <button type="button" class="btn btn-outline btn-sm" onclick="openProjectModal('labocare')">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span>Detail Fitur</span>
+              </button>
+              <a href="https://labocare.rsparumanguharjo.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                <span>Kunjungi Live</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. RADIOLOVEGY -->
+        <article class="portfolio-card" data-category="diagnostic" id="card-radiolovegy">
+          <div class="card-media">
+            <img src="assets/images/radiolovegy-preview.jpg" alt="Radiolovegy RS Paru Manguharjo">
+            <div class="card-media-overlay">
+              <span class="card-badge">Radiologi & PACS Medis</span>
+              <span class="card-live-indicator">Online & Terintegrasi</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="card-header-area">
+              <div class="card-domain">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+                <span>radiolovegy.rsparumanguharjo.com</span>
+              </div>
+              <h3 class="card-title">Radiolovegy</h3>
+            </div>
+            <p class="card-description">
+              Platform pelayanan radiologi terpadu untuk rontgen thorax, CT-scan, dan pemeriksaan diagnostik paru. Terhubung dengan arsip citra radiologi digital dan ekspertise dokter spesialis radiologi (Sp.Rad).
+            </p>
+            <div class="card-features-list">
+              <div class="feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Registrasi & Penjadwalan Rontgen Thorax</span>
+              </div>
+              <div class="feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Workstation Ekspertise Digital Dokter Sp.Rad</span>
+              </div>
+              <div class="feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Verifikasi Lembar Bacaan via QR Code</span>
+              </div>
+            </div>
+            <div class="card-tech-stack">
+              <span class="tech-pill">PHP Backend</span>
+              <span class="tech-pill">MySQL</span>
+              <span class="tech-pill">Imaging PACS Viewer</span>
+              <span class="tech-pill">Secure API</span>
+            </div>
+            <div class="card-actions">
+              <button type="button" class="btn btn-outline btn-sm" onclick="openProjectModal('radiolovegy')">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span>Detail Fitur</span>
+              </button>
+              <a href="https://radiolovegy.rsparumanguharjo.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                <span>Kunjungi Live</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. REHABCARE -->
+        <article class="portfolio-card" data-category="clinical" id="card-rehabcare">
+          <div class="card-media">
+            <img src="assets/images/rehabcare-preview.jpg" alt="RehabCare RS Paru Manguharjo">
+            <div class="card-media-overlay">
+              <span class="card-badge">Rehabilitasi Medik & Fisioterapi</span>
+              <span class="card-live-indicator">Online & Terintegrasi</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="card-header-area">
+              <div class="card-domain">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+                <span>rehabcare.rsparumanguharjo.com</span>
+              </div>
+              <h3 class="card-title">RehabCare</h3>
+            </div>
+            <p class="card-description">
+              Sistem Informasi Pelayanan Rehabilitasi Medik dan Fisioterapi Paru. Memudahkan penjadwalan sesi fisioterapi berkala, pencatatan rekam terapi pernapasan, serta pemantauan pemulihan kapasitas fungsi paru.
+            </p>
+            <div class="card-features-list">
+              <div class="feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Kalender Penjadwalan Sesi Fisioterapi</span>
+              </div>
+              <div class="feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Tracker Pemulihan Kapasitas Paru (FVC)</span>
+              </div>
+              <div class="feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Catatan Perkembangan Terapi Dokter Sp.KFR</span>
+              </div>
+            </div>
+            <div class="card-tech-stack">
+              <span class="tech-pill">PHP Architecture</span>
+              <span class="tech-pill">MySQL</span>
+              <span class="tech-pill">Calendar Engine</span>
+              <span class="tech-pill">Responsive Design</span>
+            </div>
+            <div class="card-actions">
+              <button type="button" class="btn btn-outline btn-sm" onclick="openProjectModal('rehabcare')">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span>Detail Fitur</span>
+              </button>
+              <a href="https://rehabcare.rsparumanguharjo.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                <span>Kunjungi Live</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- COLLABORATION & CONTACT SECTION            -->
+  <!-- ========================================== -->
+  <section class="section wa-barcode-section" id="contact-barcode">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+          </svg>
+          <span>Komunikasi & Kolaborasi</span>
+        </div>
+        <h2 class="section-title">Mari Berdiskusi & Bersinergi</h2>
+        <p class="section-subtitle">
+          <span class="aksara-jawa" style="display:block; margin-bottom:0.25rem;">ꦱꦩ꧀ꦧꦸꦁꦱꦼꦢꦸꦭꦸꦂ</span>
+          Jalin komunikasi dan kolaborasi pengembangan sistem pelayanan publik kesehatan bersama Aji Leksono secara cepat dan langsung.
+        </p>
+        <div class="gunungan-divider">
+          <svg class="gunungan-divider-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L4 14h5v8h6v-8h5L12 2z"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="wa-card-container">
+        <div class="wa-banner-content">
+          <h3>Konsultasi & Transformasi SIMRS</h3>
+          <p>
+            Memerlukan integrasi sistem rumah sakit, rekam asuhan digital, atau inovasi pelayanan kesehatan publik berbasis web? Pindai barcode WhatsApp di samping kanan untuk langsung terhubung dari HP Anda.
+          </p>
+          <div class="wa-banner-actions">
+            <button type="button" class="btn btn-wa" onclick="toggleWaFloatingWidget(true)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+              <span>Buka Barcode WhatsApp di Samping 👉</span>
+            </button>
+            <a href="https://wa.me/6285157979956?text=Halo%20Mas%20Aji%20Leksono%2C%20saya%20menghubungi%20Anda%20melalui%20website%20portofolio." target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+              <span>Langsung Chat (+62 851-5797-9956)</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- FLOATING WHATSAPP BARCODE WIDGET (RIGHT SIDE - LIKE IMAGE)   -->
+  <!-- ============================================================ -->
+  <div class="wa-floating-widget" id="wa-floating-widget">
+    <!-- Floating White Card (Exactly like screenshot) -->
+    <div class="wa-floating-card" id="wa-floating-card">
+      <button type="button" class="wa-card-close" id="wa-card-close" onclick="toggleWaFloatingWidget(false)" title="Tutup" aria-label="Tutup Barcode WhatsApp">✕</button>
+      
+      <div class="wa-card-header">
+        <h4>Chat lebih cepat dari HP</h4>
+      </div>
+
+      <!-- Scannable QR Code -->
+      <div class="wa-qr-box">
+        <div id="wa-floating-qrcode"></div>
+      </div>
+
+      <div class="wa-card-body">
+        <p class="wa-scan-hint">Scan pakai kamera HP, atau simpan nomor:</p>
+        <div class="wa-phone-display">0851-5797-9956</div>
+
+        <button type="button" class="btn-wa-copy" onclick="copyWaNumber(this)">
+          Salin nomor
+        </button>
+
+        <a href="https://wa.me/6285157979956?text=Halo%20Mas%20Aji%20Leksono%2C%20saya%20menghubungi%20Anda%20melalui%20website%20portofolio." target="_blank" rel="noopener noreferrer" class="wa-web-link">
+          Buka WhatsApp Web
+        </a>
+      </div>
+    </div>
+
+    <!-- Floating Circular WhatsApp Trigger Button (FAB) -->
+    <button type="button" class="wa-floating-fab" id="wa-floating-fab" onclick="toggleWaFloatingWidget()" title="Chat WhatsApp Aji Leksono" aria-label="Buka Chat WhatsApp">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23z"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- FLOATING MUSIC DOCK: LATHI                 -->
+  <!-- ========================================== -->
+  <!-- Floating prompt invitation -->
+  <div class="music-prompt-toast" id="music-prompt-toast" title="Klik untuk memutar lagu Lathi">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 18V5l12-2v13"></path>
+      <circle cx="6" cy="18" r="3"></circle>
+      <circle cx="18" cy="16" r="3"></circle>
+    </svg>
+    <span>🎵 Putar Alunan Lathi (Gamelan EDM)</span>
+  </div>
+
+  <div class="music-dock" id="music-dock">
+    <!-- Vinyl Cover Image -->
+    <div class="music-vinyl" id="music-vinyl" onclick="window.toggleLathiPlay()" title="Lathi - Weird Genius ft. Sara Fajira (Klik untuk Putar/Jeda)">
+      <img src="assets/images/gunungan-modern.jpg" alt="Lathi Album Cover">
+    </div>
+
+    <!-- Music Metadata -->
+    <div class="music-info">
+      <div class="music-title">Lathi</div>
+      <div class="music-artist">Weird Genius ft. Sara Fajira</div>
+      <!-- Animated Sound Wave Visualizer -->
+      <div class="music-equalizer" id="music-equalizer" onclick="window.toggleLathiPlay()" title="Klik untuk Putar/Jeda">
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+      </div>
+    </div>
+
+    <!-- Player Controls -->
+    <div class="music-controls">
+      <!-- Play / Pause Button -->
+      <button type="button" class="music-btn" id="music-play-btn" onclick="window.toggleLathiPlay()" title="Putar Musik (Play)" aria-label="Play atau Pause Musik">
+        <!-- Play SVG -->
+        <svg id="play-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+        <!-- Pause SVG -->
+        <svg id="pause-icon" style="display:none;" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <rect x="6" y="4" width="4" height="16"></rect>
+          <rect x="14" y="4" width="4" height="16"></rect>
+        </svg>
+      </button>
+
+      <!-- Mute Button -->
+      <button type="button" class="music-mute-btn" id="music-mute-btn" onclick="window.toggleLathiMute()" title="Mute / Unmute" aria-label="Mute Audio">
+        <svg id="volume-high-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        </svg>
+        <svg id="volume-mute-icon" style="display:none;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <line x1="23" y1="9" x2="17" y2="15"></line>
+          <line x1="17" y1="9" x2="23" y2="15"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Local HTML5 Audio Player for Lathi (Weird Genius ft. Sara Fajira) -->
+  <audio id="lathi-audio-player" preload="auto" loop playsinline>
+    <source src="assets/audio/lathi.mp3" type="audio/mpeg">
+    <source src="assets/audio/Weird%20Genius%20feat.%20Sara%20Fajira%20%E2%80%93%20LATHI%20(%EA%A6%AD%EA%A6%9B%EA%A6%B6).mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- ========================================== -->
+  <!-- PROJECT DETAILS MODAL                      -->
+  <!-- ========================================== -->
+  <div class="modal-backdrop" id="project-modal" role="dialog" aria-modal="true">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div>
+          <span id="modal-project-category" class="card-badge" style="margin-bottom:0.4rem; display:inline-block;">Kategori</span>
+          <h3 id="modal-project-title">Nama Sistem</h3>
+        </div>
+        <button type="button" class="modal-close-btn" onclick="closeProjectModal()" aria-label="Tutup Modal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img id="modal-project-img" src="" alt="Screenshot" class="modal-preview-img">
+        
+        <h4 style="margin-bottom:0.5rem; font-size:1.15rem;">Ringkasan Sistem</h4>
+        <p id="modal-project-desc" style="color:var(--text-secondary); margin-bottom:1.5rem; line-height:1.7;"></p>
+
+        <h4 style="margin-bottom:0.6rem; font-size:1.15rem;">Fitur Utama & Modul Pelayanan</h4>
+        <ul id="modal-project-features" style="list-style:none; padding:0; margin-bottom:1.5rem;"></ul>
+
+        <h4 style="margin-bottom:0.5rem; font-size:1.15rem;">Dampak Pelayanan Publik Rumah Sakit</h4>
+        <div style="padding:1rem 1.25rem; border-radius:12px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); margin-bottom:1.5rem;">
+          <p id="modal-project-impact" style="color:var(--accent-emerald); font-weight:600; margin:0; font-size:0.95rem;"></p>
+        </div>
+
+        <h4 style="margin-bottom:0.6rem; font-size:1.15rem;">Arsitektur Teknologi (Tech Stack)</h4>
+        <div id="modal-project-tech" class="card-tech-stack" style="margin-bottom:2rem;"></div>
+
+        <div style="display:flex; justify-content:flex-end; gap:1rem;">
+          <button type="button" class="btn btn-outline" onclick="closeProjectModal()">Tutup</button>
+          <a id="modal-live-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <span>Buka Website Sistem Langsung</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- WHATSAPP QUICK QR MODAL                    -->
+  <!-- ========================================== -->
+  <div class="modal-backdrop" id="wa-modal" role="dialog" aria-modal="true">
+    <div class="modal-dialog" style="max-width:480px; text-align:center;">
+      <div class="modal-header">
+        <h3 style="margin:0 auto; font-size:1.2rem;">Pindai Barcode WhatsApp</h3>
+        <button type="button" class="modal-close-btn" onclick="closeWaModal()" aria-label="Tutup Modal Barcode">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body" style="display:flex; flex-direction:column; align-items:center;">
+        <div style="background:#fff; padding:1.25rem; border-radius:18px; border:3px solid var(--gold-primary); box-shadow:var(--shadow-md); margin-bottom:1.25rem;">
+          <div id="modal-qrcode-container"></div>
+        </div>
+        <div style="font-size:1.1rem; font-weight:800; margin-bottom:0.4rem;">+62 851-5797-9956</div>
+        <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1.5rem;">
+          Arahkan kamera smartphone untuk mulai berdiskusi langsung dengan Aji Leksono.
+        </p>
+        <div style="display:flex; gap:0.75rem; width:100%;">
+          <button type="button" class="btn btn-outline" style="flex:1;" onclick="copyWaNumber(this)">Salin Nomor</button>
+          <a href="https://wa.me/6285157979956" target="_blank" rel="noopener noreferrer" class="btn btn-wa" style="flex:1;">Buka WA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- FOOTER                                     -->
+  <!-- ========================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <!-- Brand & Motto -->
+        <div class="footer-brand">
+          <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem;">
+            <img src="assets/images/gunungan-modern.jpg" alt="Gunungan" style="width:38px; height:38px; border-radius:10px; border:1px solid var(--border-color-strong);">
+            <h2>Aji Leksono</h2>
+          </div>
+          <p>
+            Programmer dan ASN Pemerintah Provinsi Jawa Timur di RS Paru Manguharjo. Mendedikasikan keahlian rekayasa teknologi informasi untuk transformasi sistem kesehatan yang tangguh, humanis, dan akuntabel.
+          </p>
+          <div class="footer-philosophy-quote">
+            <strong>ꦩꦼꦩꦪꦸꦲꦪꦸꦤꦶꦁꦧꦮꦤ</strong><br>
+            "Memayu Hayuning Bawana" — Memperindah keindahan dunia melalui karya dan pengabdian bagi sesama.
+          </div>
+        </div>
+
+        <!-- Portofolio Systems -->
+        <div class="footer-col">
+          <h4>Sistem SIMRS</h4>
+          <ul class="footer-links">
+            <li><a href="https://nutricare.rsparumanguharjo.com/" target="_blank" rel="noopener noreferrer">NutriCare (Gizi Klinis) ↗</a></li>
+            <li><a href="https://efarm.rsparumanguharjo.com/" target="_blank" rel="noopener noreferrer">EFarm (Manajemen Farmasi) ↗</a></li>
+            <li><a href="https://labocare.rsparumanguharjo.com/" target="_blank" rel="noopener noreferrer">LaboCare (Laboratorium Medis) ↗</a></li>
+            <li><a href="https://radiolovegy.rsparumanguharjo.com/" target="_blank" rel="noopener noreferrer">Radiolovegy (Radiologi & PACS) ↗</a></li>
+            <li><a href="https://rehabcare.rsparumanguharjo.com/" target="_blank" rel="noopener noreferrer">RehabCare (Rehab Medik) ↗</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Institutions -->
+        <div class="footer-col">
+          <h4>Instansi & Kontak</h4>
+          <ul class="footer-links">
+            <li>
+              <a href="https://wa.me/6285157979956" target="_blank" rel="noopener noreferrer">
+                <span>WhatsApp: +62 851-5797-9956</span>
+              </a>
+            </li>
+            <li><span>RS Paru Manguharjo Jawa Timur</span></li>
+            <li><span>Pemerintah Provinsi Jawa Timur</span></li>
+            <li><span>ASN BerAKHLAK — Bangga Melayani Bangsa</span></li>
+            <li><a href="#contact-barcode">Pindai Barcode QR ↗</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 <strong>Aji Leksono</strong>. All rights reserved. Bertema Jawa Modern Dark / Light.
+        </div>
+        <div style="display:flex; align-items:center; gap:1.25rem;">
+          <span style="color:var(--gold-primary);">Music: Lathi (Weird Genius ft. Sara Fajira)</span>
+          <span>•</span>
+          <span>Powered by Three.js & HTML5</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================== -->
+  <!-- SCRIPTS                                    -->
+  <!-- ========================================== -->
+  <!-- Three.js (Local with CDN Fallback) -->
+  <script src="assets/js/three.min.js"></script>
+
+  <!-- QRCode.js (Local with CDN Fallback) -->
+  <script src="assets/js/qrcode.min.js"></script>
+
+  <!-- Custom Three.js 3D Background Engine -->
+  <script src="assets/js/three-scene.js"></script>
+
+  <!-- Lathi Music Player Controller -->
+  <script src="assets/js/audio-player.js?v=4"></script>
+
+  <!-- Main Controller Script -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
