@@ -394,11 +394,120 @@
     }
   });
 
-  // --- 7. INITIALIZATION ON DOM LOADED ---
+  // --- 8. SCROLL REVEAL & ANIMATION ENGINE ---
+  function initScrollReveal() {
+    // Auto-stagger delay for grids & item collections
+    const staggerGroups = [
+      { selector: '.stats-grid', itemSelector: '.stat-card' },
+      { selector: '.about-highlights', itemSelector: '.highlight-box' },
+      { selector: '.values-container', itemSelector: '.value-card' },
+      { selector: '.skills-grid', itemSelector: '.skill-category-card' },
+      { selector: '.portfolio-grid', itemSelector: '.portfolio-card' },
+      { selector: '.footer-top-grid', itemSelector: '.footer-col, .footer-brand' }
+    ];
+
+    staggerGroups.forEach(group => {
+      const container = document.querySelector(group.selector);
+      if (container) {
+        const items = container.querySelectorAll(group.itemSelector);
+        items.forEach((item, index) => {
+          if (!item.classList.contains('reveal')) {
+            item.classList.add('reveal', 'reveal-fade-up', 'reveal-shimmer');
+          }
+          item.style.transitionDelay = `${(index % 6) * 0.12}s`;
+        });
+      }
+    });
+
+    const revealElements = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      revealElements.forEach(el => el.classList.add('is-visible'));
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          
+          // Trigger number counter if stat card
+          const statNumber = entry.target.querySelector('.stat-number');
+          if (statNumber && !statNumber.dataset.counted) {
+            animateStatCounter(statNumber);
+          }
+
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealElements.forEach(el => observer.observe(el));
+  }
+
+  // Number Counter Animation on scroll
+  function animateStatCounter(element) {
+    element.dataset.counted = 'true';
+    const text = element.textContent.trim();
+    
+    if (text.includes('5+')) {
+      runCounter(element, 0, 5, '+', 1100);
+    } else if (text.includes('100%')) {
+      runCounter(element, 0, 100, '%', 1300);
+    } else if (text.includes('24/7')) {
+      runCounter(element, 0, 24, '/7', 1100);
+    }
+  }
+
+  function runCounter(element, start, end, suffix, duration) {
+    let startTime = null;
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const easeProgress = 1 - Math.pow(1 - progress, 3);
+      const currentVal = Math.floor(easeProgress * (end - start) + start);
+      element.textContent = currentVal + suffix;
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      } else {
+        element.textContent = end + suffix;
+      }
+    }
+    window.requestAnimationFrame(step);
+  }
+
+  // --- 9. INTERACTIVE 3D MOUSE PARALLAX TILT ---
+  function init3DCardTilt() {
+    const tiltCards = document.querySelectorAll('.portfolio-card, .portrait-card, .skill-category-card, .stat-card');
+    
+    tiltCards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * -6;
+        const rotateY = ((x - centerX) / centerX) * 6;
+        
+        card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-8px)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
+  }
+
+  // --- 10. INITIALIZATION ON DOM LOADED ---
   document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     typeEffect();
     generateQRCodes();
+    initScrollReveal();
+    init3DCardTilt();
   });
 
 })();

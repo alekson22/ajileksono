@@ -2019,3 +2019,108 @@ h1, h2, h3, h4, h5, h6 {
     left: 12px;
   }
 }
+
+/* ==========================================================================
+   SCROLL REVEAL & ANIMATION ON SCROLL ENGINE (PREMIUM AOS)
+   ========================================================================== */
+.reveal {
+  opacity: 0;
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, filter;
+}
+
+/* Directional & Scale Variants */
+.reveal-fade-up {
+  transform: translateY(45px) scale(0.97);
+  filter: blur(5px);
+}
+
+.reveal-fade-down {
+  transform: translateY(-40px) scale(0.97);
+  filter: blur(5px);
+}
+
+.reveal-fade-left {
+  transform: translateX(-55px) scale(0.97);
+  filter: blur(5px);
+}
+
+.reveal-fade-right {
+  transform: translateX(55px) scale(0.97);
+  filter: blur(5px);
+}
+
+.reveal-zoom-in {
+  transform: scale(0.86);
+  filter: blur(5px);
+}
+
+.reveal-flip-up {
+  transform: perspective(1000px) rotateX(24deg) translateY(45px);
+  filter: blur(4px);
+}
+
+/* Active Visible State */
+.reveal.is-visible {
+  opacity: 1;
+  transform: translate(0) scale(1) rotate(0) perspective(1000px);
+  filter: blur(0);
+}
+
+/* Staggered Delay Utilities */
+.delay-1 { transition-delay: 0.1s !important; }
+.delay-2 { transition-delay: 0.2s !important; }
+.delay-3 { transition-delay: 0.3s !important; }
+.delay-4 { transition-delay: 0.4s !important; }
+.delay-5 { transition-delay: 0.5s !important; }
+.delay-6 { transition-delay: 0.6s !important; }
+
+/* Golden Shimmer Light Sweep on Entrance */
+.reveal-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.reveal-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.22), transparent);
+  transform: skewX(-25deg);
+  pointer-events: none;
+}
+
+.reveal-shimmer.is-visible::after {
+  animation: shimmer-sweep 1.2s ease 0.25s forwards;
+}
+
+@keyframes shimmer-sweep {
+  0% { left: -120%; }
+  100% { left: 220%; }
+}
+
+/* Gunungan Divider Expansion on Scroll */
+.gunungan-divider.reveal {
+  transform: scaleX(0.4);
+  opacity: 0;
+}
+
+.gunungan-divider.reveal.is-visible {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+/* 3D Interactive Card Tilt Transitions */
+.portfolio-card,
+.stat-card,
+.skill-category-card,
+.portrait-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease;
+}
