@@ -1510,6 +1510,14 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
 }
 
+.wa-floating-fab svg {
+  width: 33px;
+  height: 33px;
+  fill: #ffffff;
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.18));
+}
+
 .wa-floating-fab::after {
   content: '';
   position: absolute;

@@ -192,6 +192,17 @@
     card.classList.add('highlight-pulse');
   }
 
+  // Close floating card when clicking outside
+  document.addEventListener('click', (e) => {
+    const widget = document.getElementById('wa-floating-widget');
+    const card = document.getElementById('wa-floating-card');
+    if (widget && card && !card.classList.contains('hidden')) {
+      if (!widget.contains(e.target) && !e.target.closest('[onclick*="toggleWaFloatingWidget"]')) {
+        card.classList.add('hidden');
+      }
+    }
+  });
+
   // Copy Phone Number Function
   window.copyWaNumber = function (btnElement) {
     const rawNumber = '0851-5797-9956';
